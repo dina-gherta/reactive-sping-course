@@ -1,8 +1,8 @@
 package com.reactivespring.repository;
 
 import com.reactivespring.domain.MovieInfo;
+import com.reactivespring.repository.MovieInfoRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,13 @@ import reactor.test.StepVerifier;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataMongoTest
 @ActiveProfiles("test")
-class MovieInfoRepositoryTest {
+public class MoviesInfoRepositoryIntgTest {
+
     @Autowired
     MovieInfoRepository movieInfoRepository;
 
@@ -114,6 +116,7 @@ class MovieInfoRepositoryTest {
         StepVerifier.create(movieInfosFlux)
                 .expectNextCount(1)
                 .verifyComplete();
+
 
 
     }
