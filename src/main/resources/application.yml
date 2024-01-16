@@ -8,30 +8,32 @@ spring:
       on-profile: local
   data:
     mongodb:
-      host: localhost
+      host: host.docker.internal
       port: 27017
       database: local
----
-spring:
-  config:
-    activate:
-      on-profile: nonprod
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: local
----
-spring:
-  config:
-    activate:
-      on-profile: prod
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: local
----
-logging:
-  level:
-    root: info
+server:
+  port: 5000
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: nonprod
+#  data:
+#    mongodb:
+#      host: localhost
+#      port: 27017
+#      database: local
+#---
+#spring:
+#  config:
+#    activate:
+#      on-profile: prod
+#  data:
+#    mongodb:
+#      host: localhost
+#      port: 27017
+#      database: local
+#---
+#logging:
+#  level:
+#    root: info
